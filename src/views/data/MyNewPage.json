@@ -1,0 +1,72 @@
+// This data gets injected into the example.html view
+// and is accessible using double brackets:
+// e.g. {{ recordTitle }}
+{
+  "recordTitle": "Record Title",
+  "accounts": [
+    {
+      "name": "Customer 1",
+      "daysToPay": "50",
+      "outstanding": "110,000",
+      "lifetimeValue": "860,000",
+      "riskColor": "rgb(194, 57, 52)",
+      "riskValue": "HIGH RISK"
+    },
+    {
+      "name": "Customer 2",
+      "daysToPay": "42",
+      "outstanding": "801,000",
+      "lifetimeValue": "16,821,000",
+      "riskColor": "rgb(194, 57, 52)",
+      "riskValue": "HIGH RISK"
+    },
+    {
+      "name": "Customer 3",
+      "daysToPay": "39",
+      "outstanding": "650,000",
+      "lifetimeValue": "22,100",
+      "riskColor": "rgb(194, 57, 52)",
+      "riskValue": "HIGH RISK"
+    },
+    {
+      "name": "Customer 4",
+      "daysToPay": "16",
+      "outstanding": "1,000",
+      "lifetimeValue": "79,000",
+      "riskColor": "rgb(194, 57, 52)",
+      "riskValue": "HIGH RISK"
+    },
+    {
+      "name": "Customer 5",
+      "daysToPay": "18",
+      "outstanding": "567,000",
+      "lifetimeValue": "812,000",
+      "riskColor": "rgb(255, 154, 60)",
+      "riskValue": "MEDIUM RISK"
+    },
+    {
+      "name": "Customer 6",
+      "daysToPay": "17",
+      "outstanding": "723,000",
+      "lifetimeValue": "129,000",
+      "riskColor": "rgb(255, 154, 60)",
+      "riskValue": "MEDIUM RISK"
+    },
+    {
+      "name": "Customer 7",
+      "daysToPay": "25",
+      "outstanding": "32,500",
+      "lifetimeValue": "12,690,000",
+      "riskColor": "rgb(2, 128, 72)",
+      "riskValue": "LOW RISK"
+    },
+    {
+      "name": "Customer 8",
+      "daysToPay": "46",
+      "outstanding": "56,500",
+      "lifetimeValue": "860,000",
+      "riskColor": "rgb(2, 128, 72)",
+      "riskValue": "LOW RISK"
+    }
+  ]
+}

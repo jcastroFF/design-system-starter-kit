@@ -1,0 +1,300 @@
+<!--
+  Templates leverage Nunjucks, a powerful templating language:
+  https://mozilla.github.io/nunjucks/
+
+  # Don't want to use Nunjucks?
+    It is entirely optional. Feel free to use normal HTML instead!
+-->
+
+<!--
+  Extend the global template
+-->
+{% extends "_template.html" %}
+
+<!--
+  Page content (gets injected into the template)
+-->
+{% block content %}
+
+<div class="slds-page-header">
+  <div class="slds-page-header__row">
+    <div class="slds-page-header__col-title">
+      <div class="slds-media">
+        <div class="slds-media__figure">
+          <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+            <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+            </svg>
+            <span class="slds-assistive-text">opportunity</span>
+          </span>
+        </div>
+        <div class="slds-media__body">
+          <div class="slds-page-header__name">
+            <div class="slds-page-header__name-title">
+              <h1>
+                <span class="slds-page-header__title slds-truncate" title="Starter Kit Demo">Starter Kit Demo</span>
+              </h1>
+            </div>
+          </div>
+          <p class="slds-page-header__name-meta">Mark Jaeckal • Unlimited Customer • 11/13/15</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="slds-card slds-m-top_medium">
+  <div class="slds-p-around_medium">
+    <div class="slds-grid slds-gutters">
+      <div class="slds-col">
+        
+        <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+        <canvas id="chart-area1" width="1332" height="666" class="chartjs-render-monitor" style="display: block; height: 333px; width: 400px;"></canvas>  
+        
+      </div>
+      <div class="slds-col">
+        
+        <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+		    <canvas id="chart-area2" width="1332" height="666" class="chartjs-render-monitor" style="display: block; height: 333px; width: 400px;"></canvas>
+        <progress id="animationProgress" max="1" value="0" style="width: 100%"></progress>
+        
+      </div>
+      <div class="slds-col">
+        
+        <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+        <canvas id="chart-area3" width="1332" height="666" class="chartjs-render-monitor" style="display: block; height: 333px; width: 400px;"></canvas>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+  Script to load the charts
+-->
+<script src="/scripts/MyNewPageCharts.js"></script>
+
+<div class="slds-grid slds-gutters slds-m-top_medium">
+  <div class="slds-col slds-size_2-of-3">
+    <span>
+      
+      <div class="slds-tabs_default">
+        <ul class="slds-tabs_default__nav" role="tablist">
+          <li class="slds-tabs_default__item slds-is-active" title="OUTSTANDING" role="presentation">
+            <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item">OUTSTANDING</a>
+          </li>
+          <li class="slds-tabs_default__item" title="OVERDUE" role="presentation">
+            <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item">OVERDUE</a>
+          </li>
+          <li class="slds-tabs_default__item" title="PROMISED" role="presentation">
+            <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item">PROMISED</a>
+          </li>
+          <li class="slds-tabs_default__item" title="ON HOLD" role="presentation">
+            <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-4" id="tab-default-4__item">ON HOLD</a>
+          </li>
+        </ul>
+        <div id="tab-default-1" class="slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
+          
+          <!-- Data-table content-->
+          <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+              <thead>
+                <tr class="slds-line-height_reset">
+                  <th class="slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="Opportunity Name">ACCOUNT</div>
+                  </th>
+                  <th class="slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="Account Name">DAYS TO PAY PREDICTION</div>
+                  </th>
+                  <th class="slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="Close Date">OUTSTANDING</div>
+                  </th>
+                  <th class="slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="Stage">LIFETIME VAUE</div>
+                  </th>
+                  <th class="slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="Confidence"></div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for account in accounts %}
+                  <tr class="slds-hint-parent" style="height:37px">
+                    <th data-label="Opportunity Name" scope="row">
+                      <div class="slds-truncate" title="{{ account.name }}"><a href="javascript:void(0);" tabindex="-1">{{ account.name }}</a></div>
+                    </th>
+                    <td data-label="Account Name">
+                      <div class="slds-truncate" title="{{ account.daysToPay }}">{{ account.daysToPay }}</div>
+                    </td>
+                    <td data-label="Close Date">
+                      <div class="slds-truncate" title="{{ account.outstanding }}">{{ account.outstanding }}</div>
+                    </td>
+                    <td data-label="Prospecting">
+                      <div class="slds-truncate" title="{{ account.lifetimeValue }}">{{ account.lifetimeValue }}</div>
+                    </td>
+                    <td data-label="Confidence">
+                      <span class="slds-badge slds-badge_inverse" style="background-color: {{ account.riskColor }};">{{ account.riskValue }}</span>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+
+        </div>
+        <div id="tab-default-2" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">Item Two Content</div>
+        <div id="tab-default-3" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-3__item">Item Three Content</div>
+        <div id="tab-default-4" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-4__item">Item 4 Content</div>
+      </div>
+
+    </span>
+  </div>
+  <div class="slds-col slds-size_1-of-3">
+    <span>
+
+      <div class="slds-tabs_default">
+        <ul class="slds-tabs_default__nav" role="tablist">
+          <li class="slds-tabs_default__item slds-is-active" title="TASKS" role="presentation">
+            <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-second-1" id="tab-second-1__item">TASK</a>
+          </li>
+          <li class="slds-tabs_default__item" title="ACTIVITY" role="presentation">
+            <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-second-2" id="tab-second-2__item">ACTIVITY</a>
+          </li>
+          <li class="slds-tabs_default__item" title="CHATTER" role="presentation">
+            <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-second-3" id="tab-second-3__item">CHATTER</a>
+          </li>
+        </ul>
+        <div id="tab-second-1" class="slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tab-second-1__item">
+
+          <ul class="slds-accordion">
+            <li class="slds-accordion__list-item">
+              <section class="slds-accordion__section slds-is-open">
+                <div class="slds-accordion__summary">
+                  <h3 class="slds-accordion__summary-heading">
+                    <button aria-controls="accordion-details-01" aria-expanded="true" class="slds-button slds-button_reset slds-accordion__summary-action">
+                      <svg class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch" />
+                      </svg>
+                      <span class="slds-truncate" title="Accordion summary">Discovery</span>
+                    </button>
+                  </h3>
+                  <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small slds-shrink-none" aria-haspopup="true">
+                    <svg class="slds-button__icon" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                    </svg>
+                    <span class="slds-assistive-text">More Options</span>
+                  </button>
+                </div>
+                <div aria-hidden="false" class="slds-accordion__content" id="accordion-details-01">
+
+                  <article class="slds-card slds-card_boundary">
+                    <div class="slds-grid slds-einstein-header slds-card__header">
+                      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-4 slds-medium-size_2-of-3">
+                          <div class="slds-media__body">
+                            <h2 class="slds-truncate" title="Einstein (10+)">
+                              <a href="javascript:void(0);" class="slds-card__header-link" title="Einstein (10+)">
+                                <span class="slds-text-heading_small">Einstein Recommendations</span>
+                              </a>
+                            </h2>
+                          </div>
+                        </div>
+                        <div class="slds-einstein-header__figure slds-size_1-of-4 slds-medium-size_1-of-3"></div>
+                      </header>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+
+                        <ul aria-multiselectable="true" class="slds-scrollable_y" role="listbox" aria-label="Select an item to open it in a new workspace tab.">
+                          <li class="slds-split-view__list-item" role="presentation">
+                              <div class="slds-grid slds-gutters slds-p-around_medium" style="width: 100%">
+                                  <div class="slds-col" style="width: 70%">
+                                      <article class="slds-tile slds-media">
+                                          <div class="slds-media__figure">
+                                            <span class="slds-avatar slds-avatar_circle slds-avatar_medium">
+                                              <img alt="" src="/assets/images/avatar1.jpg" title="New CFO Adam Snowden avatar" />
+                                            </span>
+                                          </div>
+                                          <div class="slds-media__body">
+                                            <h3 class="slds-tile__title slds-truncate" title="Lexee L. Jackson"><a href="javascript:void(0);">New CFO Adam Snowden</a></h3>
+                                            <div class="slds-tile__detail">
+                                              <dl class="slds-list_horizontal slds-wrap">
+                                                <dd class="slds-item_detail slds-truncate" title="Case Management Solutions">Case Management Solutions                                                  </dd>
+                                              </dl>
+                                            </div>
+                                          </div>
+                                        </article>
+                                  </div>
+                                  <div class="slds-col">
+                                    <span class="slds-truncate slds-col_bump-left" title="Follow"><button class="slds-button slds-button_neutral">+ Follow</button></span>
+                                  </div>
+                                </div>
+                          </li>
+                          <li class="slds-split-view__list-item" role="presentation">
+                            <div class="slds-grid slds-gutters slds-p-around_medium"style="width: 100%">
+                                  <div class="slds-col" style="width: 70%">
+                                      <article class="slds-tile slds-media">
+                                          <div class="slds-media__figure">
+                                            <span class="slds-avatar slds-avatar_circle slds-avatar_medium">
+                                              <img alt="" src="/assets/images/avatar2.jpg" title="Lexee L. Jackson avatar" />
+                                            </span>
+                                          </div>
+                                          <div class="slds-media__body">
+                                            <h3 class="slds-tile__title slds-truncate" title="Lexee L. Jackson"><a href="javascript:void(0);">Lexee L. Jackson</a></h3>
+                                            <div class="slds-tile__detail">
+                                              <dl class="slds-list_horizontal slds-wrap">
+                                                <dd class="slds-item_detail slds-truncate" title="Tech Doors Company">Tech Doors Company</dd>
+                                              </dl>
+                                            </div>
+                                          </div>
+                                        </article>
+                                  </div>
+                                  <div class="slds-col">
+                                    <span class="slds-truncate slds-col_bump-left" title="Follow"><button class="slds-button slds-button_neutral">+ Follow</button></span>
+                                  </div>
+                                </div>
+                          </li>
+                        </ul>
+
+                    </div>
+                    <footer class="slds-card__footer">
+                      <a class="slds-card__footer-action" href="javascript:void(0);">View All
+                        <span class="slds-assistive-text">Einstein Recommendations</span>
+                      </a>
+                    </footer>
+                  </article>
+
+                </div>
+              </section>
+            </li>
+            <li class="slds-accordion__list-item">
+              <section class="slds-accordion__section">
+                <div class="slds-accordion__summary">
+                  <h3 class="slds-accordion__summary-heading">
+                    <button aria-controls="accordion-details-02" aria-expanded="false" class="slds-button slds-button_reset slds-accordion__summary-action">
+                      <svg class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch" />
+                      </svg>
+                      <span class="slds-truncate" title="Accordion summary">My tasks</span>
+                    </button>
+                  </h3>
+                  <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small slds-shrink-none" aria-haspopup="true">
+                    <svg class="slds-button__icon" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                    </svg>
+                    <span class="slds-assistive-text">More Options</span>
+                  </button>
+                </div>
+                <div aria-hidden="true" class="slds-accordion__content" id="accordion-details-02">Accordion details - B</div>
+              </section>
+            </li>
+          </ul>
+
+        </div>
+        <div id="tab-second-2" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-second-2__item">Item Two Content</div>
+        <div id="tab-second-3" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-second-3__item">Item Three Content</div>
+      </div>
+
+    </span>
+  </div>
+</div>
+
+{% endblock %}
